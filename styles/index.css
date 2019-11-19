@@ -1,0 +1,58 @@
+.ad-element {
+    border: 1px solid #ccc !important;
+    border-radius: 5px;
+    position: relative;
+    margin: 1em 0em;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.drop {
+    padding: 1em 0em !important;
+    /* border: 1px dashed #a7a7a7 !important; */
+    border-radius: 5px;
+    background: #f0f4fa !important;
+    position: relative;
+    margin: 1em 0em;
+    flex: 1 0 auto;
+    /* min-width: 8em; */
+}
+
+.display-block {
+    display: block;
+}
+
+.item-add-button {
+    position: relative;
+    margin-top: 5px;
+}
+
+.menu-button {
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 45%;
+    font-size: 1.5em;
+    color: darkgray;
+    border: 1px solid lightgrey;
+    background-color: white;
+}
+
+
+/* .sub-button {
+    display: flex;
+    height: 1.3em;
+    width: 1.3em;
+    border-radius: 50%;
+    margin-left: 85%;
+    font-size: 1.5em;
+    color: black;
+    text-align: center;
+} */

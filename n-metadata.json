@@ -1,0 +1,11 @@
+{
+    "name": "advance-menu",
+    "version": "1.0.0",
+    "displayName": "Advance Menu",
+    "description": ".",
+    "type": "Components",
+    "publisher": "Saikumar",
+    "platformSupportVersion": "6.2.0",
+    "packageType": "studio-package",
+    "dependencies": []
+}

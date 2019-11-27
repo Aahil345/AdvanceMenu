@@ -1,17 +1,17 @@
 let Attribute = require('@jatahworx/bhive-toolkits').Attribute;
 let AdvanceComponent = require('@jatahworx/bhive-toolkits').AdvancedComponent;
 
-module.exports = class AdvanceMenu extends AdvanceComponent {
+module.exports = class advanceMenu extends AdvanceComponent {
 
     constructor() {
 
-        const name = "advance-menu";
+        const name = "ng-menu";
         const designerTemplate = `
-            <advance-menu onclick="click(event)" component-label="Menu" class="ad-element flex-shrink-0 flex-grow-1">           
-            <div slot="add" class="item-add-button">
-                <button id="addmenuitem" class="menu-button" no-select>+</button>
-            </div>
-            </advance-menu>
+            <ng-menu onclick="click(event)" component-label="Menu" class="ad-element flex-shrink-0 flex-grow-1">           
+                <div slot="add" class="ng-menu-button-slot">
+                    <button id="addmenuitem" class="ng-menu-button" no-select>+</button>
+                </div>
+            </ng-menu>
         `;
         const paletteTemplate = 'Menu';
         const componentLabel = 'Menu';
@@ -103,7 +103,7 @@ module.exports = class AdvanceMenu extends AdvanceComponent {
               }`,
             slotsTemplate: `
             <div class="parent_menu">
-                <slot name="menus"></slot>
+                <slot name="menu-items"></slot>
              </div>
             <div class="parent_menu">
                 <slot id="addSlot" name="add"></slot>
@@ -114,7 +114,7 @@ module.exports = class AdvanceMenu extends AdvanceComponent {
             customMethods: {
                 click: function(event) {
                     if (event.target.id === "addmenuitem") {
-                        this.addChild("advance-menu-item");
+                        this.addChild("ng-menu-item");
                     }
                 },
             }

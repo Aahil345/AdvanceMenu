@@ -1,13 +1,13 @@
 let Attribute = require('@jatahworx/bhive-toolkits').Attribute;
 let AdvanceComponent = require('@jatahworx/bhive-toolkits').AdvancedComponent;
 
-module.exports = class AdvanceMenuItem extends AdvanceComponent {
+module.exports = class MenuItem extends AdvanceComponent {
 
     constructor() {
-        const name = "advance-menu-item";
+        const name = "ng-menu-item";
         const designerTemplate = `
-            <advance-menu-item slot="menus" class=\"drop display-block\" component-label="Menu Item" block-copy>
-            </advance-menu-item>`;
+            <ng-menu-item slot="menu-items" class="drop display-block" component-label="Menu Item" block-copy>
+            </ng-menu-item>`;
         const paletteTemplate = 'Menu Item';
         const componentLabel = 'Menu Item';
         const templateUrl = "";

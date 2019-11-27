@@ -1,5 +1,5 @@
-let AdvanceMenu = require('./AdvanceMenu');
-let AdvanceMenuItem = require('./AdvanceMenuItem');
+let Menu = require('./Menu');
+let MenuItem = require('./MenuItem');
 
 let disabled = require('./attributeTypes/Disabled');
 let hasBackDrop = require('./attributeTypes/HasBackDrop');
@@ -7,8 +7,8 @@ let overLapTrigger = require('./attributeTypes/OverLapTrigger');
 
 module.exports = {
     components: {
-        AdvanceMenu,
-        AdvanceMenuItem
+        Menu,
+        MenuItem
     },
     attributeTypes: {
         'disabled': new disabled(),

@@ -1,5 +1,6 @@
 let Attribute = require('@jatahworx/bhive-toolkits').Attribute;
 let AdvanceComponent = require('@jatahworx/bhive-toolkits').AdvancedComponent;
+let BGuid = require('@jatahworx/bhive-toolkits/util/BGuid');
 
 module.exports = class advanceMenu extends AdvanceComponent {
 
@@ -39,7 +40,18 @@ module.exports = class advanceMenu extends AdvanceComponent {
             new Attribute({
                 key: 'templateRef',
                 value: '',
-                type: 'kv'
+                type: 'dav',
+                templateUpdater: {
+                    preRender: () => {
+                        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                        var Uid = '';
+                        for (var i = 0; i < 8; i++) {
+                            var chars = Math.floor(Math.random() * characters.length);
+                            Uid += characters.substring(chars, chars + 1);
+                        }
+                        return Uid;
+                    }
+                }
             })
         );
         super.addAttribute(
@@ -53,7 +65,19 @@ module.exports = class advanceMenu extends AdvanceComponent {
             new Attribute({
                 key: 'matMenu',
                 value: '',
-                type: 'vk'
+                type: 'dav',
+                templateUpdater: {
+                    postSave: function(elementValue, parentDesignerReference, attribs) {
+                        let matMenuvalue;
+                        for (let i = 0; i < attribs.length; i++) {
+                            if (attribs[i]._key === 'templateRef' && typeof attribs[i]._value === 'string' && attribs[i]._value != '') {
+                                matMenuvalue = `#${attribs[i]._value}=matMenu`;
+                                return matMenuvalue;
+                            }
+                        }
+                    }
+                },
+                visible: false
             })
         );
         super.addAttribute(
@@ -120,9 +144,8 @@ module.exports = class advanceMenu extends AdvanceComponent {
             }
         });
     }
-
     get template() {
-        const template = `<mat-menu  %bCustomProps% %style% %class% %xPosition% %yPosition% %templateRef% %items% %matMenu% %hasBackdrop% %overlapTrigger% %(closed)% %direction% %parentMenu%> </mat-menu>`;
+        const template = `<mat-menu  %bCustomProps% %style% %class% %xPosition% %yPosition% %items% %matMenu% %hasBackdrop% %overlapTrigger% %(closed)% %direction% %parentMenu%> </mat-menu>`;
         return template;
     }
 

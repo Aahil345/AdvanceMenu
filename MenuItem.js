@@ -1,5 +1,6 @@
 let Attribute = require('@jatahworx/bhive-toolkits').Attribute;
 let AdvanceComponent = require('@jatahworx/bhive-toolkits').AdvancedComponent;
+let BGuid = require('@jatahworx/bhive-toolkits/util/BGuid');
 
 module.exports = class MenuItem extends AdvanceComponent {
 
@@ -39,7 +40,7 @@ module.exports = class MenuItem extends AdvanceComponent {
             })
         );
 
-        this.template = `<button mat-menu-item %bCustomProps% %style% %class% %[matMenuTriggerFor]% %[disabled]%> %MenuItemName% </button>`;
+        this.template = `<button mat-menu-item %bCustomProps% %style% %class% %[matMenuTriggerFor]%  %[disabled]%> %MenuItemName% </button>`;
 
         super.composeTemplate({
             styles: `:host {
